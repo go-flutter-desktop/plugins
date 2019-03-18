@@ -4,7 +4,7 @@ This repo contains go-flutter implementations for popular flutter plugins.
 
 ## The list
 
-- shared_preferences [go](shared_preferences) [flutter](https://pub.dartlang.org/packages/shared_preferences)
+- [shared_preferences](shared_preferences) - Provides a persistent store for simple data. ([flutter package](https://pub.dartlang.org/packages/shared_preferences))
 
 ## Issues
 
