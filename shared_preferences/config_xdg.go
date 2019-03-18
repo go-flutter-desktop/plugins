@@ -1,6 +1,6 @@
 // +build !windows,!darwin
 
-package sharedpreferences
+package shared_preferences
 
 import (
 	"os"
