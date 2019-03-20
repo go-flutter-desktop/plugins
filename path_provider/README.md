@@ -1,22 +1,22 @@
-# shared_preferences
+# path_provider
 
-This Go package implements the host-side of the Flutter [shared_preferences](https://github.com/flutter/plugins/tree/master/packages/shared_preferences) plugin.
+This Go package implements the host-side of the Flutter [path_provider](https://github.com/flutter/plugins/tree/master/packages/path_provider) plugin.
 
 ## Usage
 
 Import as:
 
 ```go
-import "github.com/go-flutter-desktop/plugins/shared_preferences"
+import "github.com/go-flutter-desktop/plugins/path_provider"
 ```
 
 Then add the following option to your go-flutter application options:
 
 ```go
-flutter.AddPlugin(&shared_preferences.SharedPreferencesPlugin{
+flutter.AddPlugin(&path_provider.PathProviderPlugin{
 	VendorName:      "myOrganizationOrUsername",
 	ApplicationName: "myApplicationName",
-})
+}),
 ```
 
 Change the values of the Vendor and Application names to a custom and unique

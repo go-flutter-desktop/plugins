@@ -42,7 +42,7 @@ func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) e
 
 	// TODO: move into a getDB call which initializes on first use, lower startup latency.
 	var err error
-	p.db, err = leveldb.OpenFile(filepath.Join(userSettingFolder, p.VendorName, p.ApplicationName), nil)
+	p.db, err = leveldb.OpenFile(filepath.Join(userSettingFolder, p.VendorName, p.ApplicationName, "shared_preferences.leveldb"), nil)
 	if err != nil {
 		// TODO: when moved into getDB: error shouldn't kill the plugin and thereby the whole app,
 		return errors.Wrap(err, "failed to open leveldb for shared_preferences")
