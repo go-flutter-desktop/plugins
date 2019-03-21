@@ -45,7 +45,10 @@ func (p *PathProviderPlugin) InitPlugin(messenger plugin.BinaryMessenger) error 
 
 func (p *PathProviderPlugin) handleTempDir(arguments interface{}) (reply interface{}, err error) {
 	cacheDir, err := os.UserCacheDir()
-	return filepath.Join(cacheDir, p.VendorName, p.ApplicationName), err
+	if err != nil {
+		return nil, err
+	}
+	return filepath.Join(cacheDir, p.VendorName, p.ApplicationName), nil
 }
 
 func (p *PathProviderPlugin) handleAppDir(arguments interface{}) (reply interface{}, err error) {
