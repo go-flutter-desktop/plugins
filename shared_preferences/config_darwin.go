@@ -1,5 +1,0 @@
-package shared_preferences
-
-import "os"
-
-var userSettingFolder = os.Getenv("HOME") + "/Library/Application Support"

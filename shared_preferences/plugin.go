@@ -1,10 +1,13 @@
 package shared_preferences
 
 import (
+	"os"
 	"path/filepath"
+	"runtime"
 
 	flutter "github.com/go-flutter-desktop/go-flutter"
 	"github.com/go-flutter-desktop/go-flutter/plugin"
+	homedir "github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
@@ -24,12 +27,14 @@ type SharedPreferencesPlugin struct {
 	// directory name.
 	ApplicationName string
 
-	db    *leveldb.DB
-	codec plugin.StandardMessageCodec
+	userConfigFolder string
+	db               *leveldb.DB
+	codec            plugin.StandardMessageCodec
 }
 
 var _ flutter.Plugin = &SharedPreferencesPlugin{} // compile-time type check
 
+// InitPlugin initializes the shared preferences plugin.
 func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
 	if p.VendorName == "" {
 		// returned immediately because this is likely a programming error
@@ -40,9 +45,31 @@ func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) e
 		return errors.New("SharedPreferencesPlugin.ApplicationName must be set")
 	}
 
+	switch runtime.GOOS {
+	case "darwin":
+		home, err := homedir.Dir()
+		if err != nil {
+			return errors.Wrap(err, "failed to resolve user home dir")
+		}
+		p.userConfigFolder = filepath.Join(home, "Library", "Application Support")
+	case "windows":
+		p.userConfigFolder = os.Getenv("APPDATA")
+	default:
+		// https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+		if os.Getenv("XDG_CONFIG_HOME") != "" {
+			p.userConfigFolder = os.Getenv("XDG_CONFIG_HOME")
+		} else {
+			home, err := homedir.Dir()
+			if err != nil {
+				return errors.Wrap(err, "failed to resolve user home dir")
+			}
+			p.userConfigFolder = filepath.Join(home, ".config")
+		}
+	}
+
 	// TODO: move into a getDB call which initializes on first use, lower startup latency.
 	var err error
-	p.db, err = leveldb.OpenFile(filepath.Join(userSettingFolder, p.VendorName, p.ApplicationName, "shared_preferences.leveldb"), nil)
+	p.db, err = leveldb.OpenFile(filepath.Join(p.userConfigFolder, p.VendorName, p.ApplicationName, "shared_preferences.leveldb"), nil)
 	if err != nil {
 		// TODO: when moved into getDB: error shouldn't kill the plugin and thereby the whole app,
 		return errors.Wrap(err, "failed to open leveldb for shared_preferences")
