@@ -27,13 +27,9 @@ var _ flutter.Plugin = &PathProviderPlugin{} // compile-time type check
 
 // InitPlugin initializes the path provider plugin.
 func (p *PathProviderPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
-	if p.VendorName == "" {
-		// returned immediately because this is likely a programming error
-		return errors.New("PathProviderPlugin.VendorName must be set")
-	}
-	if p.ApplicationName == "" {
-		// returned immediately because this is likely a programming error
-		return errors.New("PathProviderPlugin.ApplicationName must be set")
+	err := p.Guard()
+	if err != nil {
+		return err
 	}
 
 	switch runtime.GOOS {

@@ -31,13 +31,9 @@ var _ flutter.Plugin = &SharedPreferencesPlugin{} // compile-time type check
 
 // InitPlugin initializes the shared preferences plugin.
 func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
-	if p.VendorName == "" {
-		// returned immediately because this is likely a programming error
-		return errors.New("SharedPreferencesPlugin.VendorName must be set")
-	}
-	if p.ApplicationName == "" {
-		// returned immediately because this is likely a programming error
-		return errors.New("SharedPreferencesPlugin.ApplicationName must be set")
+	err := p.Guard()
+	if err != nil {
+		return err
 	}
 
 	switch runtime.GOOS {
@@ -63,7 +59,6 @@ func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) e
 	}
 
 	// TODO: move into a getDB call which initializes on first use, lower startup latency.
-	var err error
 	p.db, err = leveldb.OpenFile(filepath.Join(p.userConfigFolder, p.VendorName, p.ApplicationName, "shared_preferences.leveldb"), nil)
 	if err != nil {
 		// TODO: when moved into getDB: error shouldn't kill the plugin and thereby the whole app,
