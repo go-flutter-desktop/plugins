@@ -2,7 +2,6 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
 github.com/go-flutter-desktop/go-flutter v0.5.0-alpha h1:1WaIRPGI2nmO83gYXAaOtPC3gqBns43IW5EnwO5ht/I=
 github.com/go-flutter-desktop/go-flutter v0.5.0-alpha/go.mod h1:bHC0mnEgTyp23W1ymE7PLY1l4jTxGkTBxCnB99dcZFs=
-github.com/go-flutter-desktop/plugins v0.0.0-20190402224255-bc4613525151 h1:SNfruLVG5aLQBB9Qx5iao3rANE29R4QVwWWYbs50iBk=
 github.com/go-gl/glfw v0.0.0-20190217072633-93b30450e032 h1:WUDJN6o1AZlnNR0UZ11zsr0Quh44CV7svcg6VzEsySc=
 github.com/go-gl/glfw v0.0.0-20190217072633-93b30450e032/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
