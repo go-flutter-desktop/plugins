@@ -9,6 +9,7 @@ import (
 	"github.com/go-flutter-desktop/go-flutter/plugin"
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"
+	"github.com/go-flutter-desktop/plugins"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 )
@@ -19,13 +20,7 @@ const channelName = "plugins.flutter.io/shared_preferences"
 // the plugins.flutter.io/shared_preferences channel. Preferences are stored
 // using leveldb in the users' home directory config location.
 type SharedPreferencesPlugin struct {
-	// VendorName must be set to a nonempty value. Use company name or a domain
-	// that you own. Note that the value must be valid as a cross-platform directory name.
-	VendorName string
-	// ApplicationName must be set to a nonempty value. Use the unique name for
-	// this application. Note that the value must be valid as a cross-platform
-	// directory name.
-	ApplicationName string
+	plugins.Plugin
 
 	userConfigFolder string
 	db               *leveldb.DB

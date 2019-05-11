@@ -7,6 +7,7 @@ import (
 
 	flutter "github.com/go-flutter-desktop/go-flutter"
 	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/go-flutter-desktop/plugins"
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"
 )
@@ -16,13 +17,7 @@ const channelName = "plugins.flutter.io/path_provider"
 // PathProviderPlugin implements flutter.Plugin and handles method calls to
 // the plugins.flutter.io/path_provider channel.
 type PathProviderPlugin struct {
-	// VendorName must be set to a nonempty value. Use company name or a domain
-	// that you own. Note that the value must be valid as a cross-platform directory name.
-	VendorName string
-	// ApplicationName must be set to a nonempty value. Use the unique name for
-	// this application. Note that the value must be valid as a cross-platform
-	// directory name.
-	ApplicationName string
+	plugins.Plugin
 
 	userConfigFolder string
 	codec            plugin.StandardMessageCodec
