@@ -53,7 +53,7 @@ func (p *FilePickerPlugin) directoryPicker(dialog dialog) func(arguments interfa
 
 		directory, _, err := dialog.File(title, "*", true)
 		if err != nil {
-			return nil, err
+			return nil, errors.Wrap(err, "failed to open dialog picker")
 		}
 
 		return directory, err
