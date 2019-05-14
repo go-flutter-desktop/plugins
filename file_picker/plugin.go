@@ -8,35 +8,16 @@ import (
 
 const channelName = "plugins.flutter.io/file_picker"
 
-type FilePickerPlugin struct {
-	VendorName      string
-	ApplicationName string
-}
+type FilePickerPlugin struct {}
 
 var _ flutter.Plugin = &FilePickerPlugin{} // compile-time type check
 
 func (p *FilePickerPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
-	err := p.guard()
-	if err != nil {
-		return err
-	}
-
 	dialogProvider := dialogProvider{}
 
 	channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
 	channel.HandleFunc("openDirectory", p.filePicker(dialogProvider, true))
 	channel.HandleFunc("openFile", p.filePicker(dialogProvider, false))
-
-	return nil
-}
-
-func (p *FilePickerPlugin) guard() error {
-	if p.VendorName == "" {
-		return errors.New("FilePickerPlugin.VendorName must be set")
-	}
-	if p.ApplicationName == "" {
-		return errors.New("FilePickerPlugin.ApplicationName must be set")
-	}
 
 	return nil
 }
