@@ -1,4 +1,4 @@
-module github.com/go-flutter-desktop/plugins/dialog_picker
+module github.com/go-flutter-desktop/plugins/file_picker
 
 go 1.12
 
