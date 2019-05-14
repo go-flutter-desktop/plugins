@@ -1,4 +1,4 @@
-# dialog_picker
+# file_picker
 
 This Go package opens the native directory/file picker.
 
@@ -7,16 +7,13 @@ This Go package opens the native directory/file picker.
 Import as:
 
 ```go
-import file_picker
+import github.com/go-flutter-desktop/plugins/file_picker
 ```
 
 Then add the following option to your go-flutter [application options](https://github.com/go-flutter-desktop/go-flutter/blob/68868301742b864b719b31ae51c7ec4b3b642d1a/example/simpleDemo/main.go#L53):
 
 ```go
-flutter.AddPlugin(&path_provider.DialogPickerPlugin{
-	VendorName:      "myOrganizationOrUsername",
-	ApplicationName: "myApplicationName",
-}),
+flutter.AddPlugin(&filePicker.FilePickerPlugin{}),
 ```
 
 Change the values of the Vendor and Application names to a custom and unique
