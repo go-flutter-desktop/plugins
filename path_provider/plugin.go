@@ -25,7 +25,6 @@ type PathProviderPlugin struct {
 	ApplicationName string
 
 	userConfigFolder string
-	codec            plugin.StandardMessageCodec
 }
 
 var _ flutter.Plugin = &PathProviderPlugin{} // compile-time type check
