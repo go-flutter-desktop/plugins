@@ -16,9 +16,6 @@ Then add the following option to your go-flutter [application options](https://g
 flutter.AddPlugin(&url_launcher.UrlLauncherPlugin{}),
 ```
 
-Change the values of the Vendor and Application names to a custom and unique
-string, so it doesn't conflict with other organizations.
-
 ## Issues
 
 Please report issues at the [go-flutter issue tracker](https://github.com/go-flutter-desktop/go-flutter/issues/).
