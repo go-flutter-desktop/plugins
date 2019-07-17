@@ -15,7 +15,7 @@ type UrlLauncherPlugin struct{}
 
 var _ flutter.Plugin = &UrlLauncherPlugin{} // compile-time type check
 
-func (p *UrlLauncherPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {	
+func (p *UrlLauncherPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
 	channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
 	channel.HandleFunc("launch", p.launch)
 	channel.HandleFunc("canLaunch", p.canLaunch)
@@ -42,27 +42,27 @@ func (p *UrlLauncherPlugin) launch(arguments interface{}) (reply interface{}, er
 
 	useWebView = argsMap["useWebView"].(bool)
 	if useWebView == true {
-		fmt.Println("plugins.flutter.io/url_launcher: WebView aren't supported on desktop.")
+		fmt.Println("go-flutter-desktop/plugins/url_launcher: WebView aren't supported on desktop.")
 	}
 
 	useSafariVC = argsMap["useSafariVC"].(bool)
 	if useSafariVC == true {
-		fmt.Println("plugins.flutter.io/url_launcher: SafariVC aren't supported on desktop.")
+		fmt.Println("go-flutter-desktop/plugins/url_launcher: SafariVC aren't supported on desktop.")
 	}
 
 	enableJavaScript = argsMap["enableJavaScript"].(bool)
 	if enableJavaScript == true {
-		fmt.Println("plugins.flutter.io/url_launcher: enableJavaScript aren't supported on desktop.")
+		fmt.Println("go-flutter-desktop/plugins/url_launcher: enableJavaScript aren't supported on desktop.")
 	}
 
 	enableDomStorage = argsMap["enableDomStorage"].(bool)
 	if enableDomStorage == true {
-		fmt.Println("plugins.flutter.io/url_launcher: enableDomStorage aren't supported on desktop.")
+		fmt.Println("go-flutter-desktop/plugins/url_launcher: enableDomStorage aren't supported on desktop.")
 	}
 
 	universalLinksOnly = argsMap["universalLinksOnly"].(bool)
 	if universalLinksOnly == true {
-		fmt.Println("plugins.flutter.io/url_launcher: universalLinksOnly aren't supported on desktop.")
+		fmt.Println("go-flutter-desktop/plugins/url_launcher: universalLinksOnly aren't supported on desktop.")
 	}
 
 	browser.OpenURL(url)
