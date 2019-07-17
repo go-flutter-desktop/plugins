@@ -2,19 +2,23 @@ package url_launcher
 
 import (
 	"fmt"
+	"os/exec"
+	"runtime"
 
 	"github.com/go-flutter-desktop/go-flutter"
 	"github.com/go-flutter-desktop/go-flutter/plugin"
-	"github.com/pkg/browser"
 	"github.com/pkg/errors"
 )
 
 const channelName = "plugins.flutter.io/url_launcher"
 
+// ImagePickerPlugin implements flutter.Plugin and handles method calls to
+// the plugins.flutter.io/url_launcher channel.
 type UrlLauncherPlugin struct{}
 
 var _ flutter.Plugin = &UrlLauncherPlugin{} // compile-time type check
 
+// InitPlugin initializes the plugin.
 func (p *UrlLauncherPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
 	channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
 	channel.HandleFunc("launch", p.launch)
@@ -27,47 +31,30 @@ func (p *UrlLauncherPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
 }
 
 func (p *UrlLauncherPlugin) launch(arguments interface{}) (reply interface{}, err error) {
-	var url string
-	var useWebView bool
-	var useSafariVC bool
-	var enableJavaScript bool
-	var enableDomStorage bool
-	var universalLinksOnly bool
-
 	argsMap := arguments.(map[interface{}]interface{})
-	url = argsMap["url"].(string)
+
+	url := argsMap["url"].(string)
 	if url == "" {
 		return nil, errors.New("url is empty")
 	}
 
-	useWebView = argsMap["useWebView"].(bool)
+	useWebView := argsMap["useWebView"].(bool)
 	if useWebView == true {
 		fmt.Println("go-flutter-desktop/plugins/url_launcher: WebView aren't supported on desktop.")
 	}
 
-	useSafariVC = argsMap["useSafariVC"].(bool)
-	if useSafariVC == true {
-		fmt.Println("go-flutter-desktop/plugins/url_launcher: SafariVC aren't supported on desktop.")
+	switch runtime.GOOS {
+	case "linux":
+		err = exec.Command("xdg-open", url).Start()
+	case "windows":
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
+	case "darwin":
+		err = exec.Command("open", url).Start()
+	default:
+		err = errors.New("Unsupported platform")
 	}
 
-	enableJavaScript = argsMap["enableJavaScript"].(bool)
-	if enableJavaScript == true {
-		fmt.Println("go-flutter-desktop/plugins/url_launcher: enableJavaScript aren't supported on desktop.")
-	}
-
-	enableDomStorage = argsMap["enableDomStorage"].(bool)
-	if enableDomStorage == true {
-		fmt.Println("go-flutter-desktop/plugins/url_launcher: enableDomStorage aren't supported on desktop.")
-	}
-
-	universalLinksOnly = argsMap["universalLinksOnly"].(bool)
-	if universalLinksOnly == true {
-		fmt.Println("go-flutter-desktop/plugins/url_launcher: universalLinksOnly aren't supported on desktop.")
-	}
-
-	browser.OpenURL(url)
-
-	return nil, nil
+	return nil, err
 }
 
 func (p *UrlLauncherPlugin) canLaunch(arguments interface{}) (reply interface{}, err error) {
@@ -76,7 +63,7 @@ func (p *UrlLauncherPlugin) canLaunch(arguments interface{}) (reply interface{},
 	argsMap := arguments.(map[interface{}]interface{})
 	url = argsMap["url"].(string)
 	if url == "" {
-		return false, errors.New("url is empty")
+		return false, nil
 	}
 
 	return true, nil
