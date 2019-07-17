@@ -10,7 +10,7 @@ Import as:
 import "github.com/go-flutter-desktop/plugins/path_provider"
 ```
 
-Then add the following option to your go-flutter [application options](https://github.com/go-flutter-desktop/go-flutter/blob/68868301742b864b719b31ae51c7ec4b3b642d1a/example/simpleDemo/main.go#L53):
+Then add the following option to your go-flutter [application options](https://github.com/go-flutter-desktop/go-flutter/wiki/Plugin-info):
 
 ```go
 flutter.AddPlugin(&path_provider.PathProviderPlugin{
