@@ -15,8 +15,7 @@ type UrlLauncherPlugin struct{}
 
 var _ flutter.Plugin = &UrlLauncherPlugin{} // compile-time type check
 
-func (p *UrlLauncherPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
-	fmt.Println("InitPlugin")
+func (p *UrlLauncherPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {	
 	channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
 	channel.HandleFunc("launch", p.launch)
 	channel.HandleFunc("canLaunch", p.canLaunch)
