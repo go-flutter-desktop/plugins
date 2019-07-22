@@ -54,7 +54,7 @@ func (p *ImagePickerPlugin) handlePickImage(arguments interface{}) (reply interf
 }
 
 func (p *ImagePickerPlugin) handlePickVideo(arguments interface{}) (reply interface{}, err error) {
-	argsMap := arguments.(map[string]interface{})
+	argsMap := arguments.(map[interface{}]interface{})
 	switch argsMap["source"].(int32) {
 	case sourceCamera:
 		return nil, errors.New("source camera is not yet supported by image_picker desktop plugin")
