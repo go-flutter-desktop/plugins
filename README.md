@@ -8,7 +8,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 
 ## From [flutter/plugins](https://github.com/flutter/plugins)
 
-- [image_picker](image_picker) - Select an image or video from storage. **Currently only supported on linux and osx** ([pub.dev](https://pub.dev/packages/image_picker))
+- [image_picker](image_picker) - Select an image or video from storage. ([pub.dev](https://pub.dev/packages/image_picker))
 - [path_provider](path_provider) - Finding commonly used locations on the filesystem. ([pub.dev](https://pub.dev/packages/path_provider))
 - [shared_preferences](shared_preferences) - Provides a persistent store for simple data. ([pub.dev](https://pub.dev/packages/shared_preferences))
 - [url_launcher](url_launcher) - Flutter plugin for launching a URL. ([pub.dev](https://pub.dev/packages/url_launcher))
