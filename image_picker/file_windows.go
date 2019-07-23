@@ -23,6 +23,7 @@ const (
 
 type openfilenameW struct {
 	lStructSize       uint32
+	lpstrTitle        *uint16
 	hwndOwner         syscall.Handle
 	hInstance         syscall.Handle
 	lpstrFilter       *uint16
@@ -34,7 +35,6 @@ type openfilenameW struct {
 	lpstrFileTitle    *uint16
 	nMaxFileTitle     uint32
 	lpstrInitialDir   *uint16
-	lpstrTitle        *uint16
 	flags             uint32
 	nFileOffset       uint16
 	nFileExtension    uint16
