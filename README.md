@@ -12,6 +12,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 - [path_provider](path_provider) - Finding commonly used locations on the filesystem. ([pub.dev](https://pub.dev/packages/path_provider))
 - [shared_preferences](shared_preferences) - Provides a persistent store for simple data. ([pub.dev](https://pub.dev/packages/shared_preferences))
 - [url_launcher](url_launcher) - Flutter plugin for launching a URL. ([pub.dev](https://pub.dev/packages/url_launcher))
+- [clipboard_manager](clipboard_manager) - Flutter plugin for copying text to the clipboard. ([pub.dev](https://pub.dev/packages/clipboard_manager))
 
 
 ## From the community
