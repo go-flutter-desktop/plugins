@@ -17,7 +17,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 ## From the community
 
 - [sqlite](https://github.com/nealwon/go-flutter-plugin-sqlite) - Flutter plugin for SQLite. ([pub.dev](https://pub.dev/packages/sqflite))
-- [statusbarcolor](https://github.com/zephylac/statusbarcolor) - Support custom title bar color [go-flutter#177](https://github.com/go-flutter-desktop/go-flutter/issues/177). **Only for osx**
+- [title_bar](https://github.com/zephylac/title_bar) - Support custom title bar color [go-flutter#177](https://github.com/go-flutter-desktop/go-flutter/issues/177). **Only for osx**
 
 
 If you have implemented a plugin that you would like to add to this repository,
