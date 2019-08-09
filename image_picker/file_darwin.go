@@ -20,7 +20,7 @@ func fileDialog(title string, fileType string) (string, error) {
 	case "image":
 		filters = `"PNG", "public.png", "JPEG", "jpg", "public.jpeg"`
 	case "video":
-		filters = `"MOV"`
+		filters = `"MOV","mov","MP4","mp4","AVI","avi","MKV","mkv"`
 	default:
 		return "", errors.New("unsupported fileType")
 	}
