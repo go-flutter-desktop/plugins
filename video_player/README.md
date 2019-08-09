@@ -16,6 +16,11 @@ Then add the following option to your go-flutter [application options](https://g
 flutter.AddPlugin(&video_player.VideoPlayerPlugin{}),
 ```
 
+The plugin uses a third party library to handle video to image decoding.  
+The video decoding is done by [3d0c/gmf](https://github.com/3d0c/gmf), a go
+FFmpeg bindings.  
+If you have trubble installing the plugin, checkout their [installation](https://github.com/3d0c/gmf#installation) procedure.
+
 ## :warning: Disclaimer :warning:
 
 This plugin is available for educational purposes, and the go-flutter team isn't
