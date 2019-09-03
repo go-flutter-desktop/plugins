@@ -3,9 +3,7 @@ package video_player
 // This file hides the ffmpeg related computations.
 //
 // The api exposed by github.com/3d0c/gmf is messy (all go-ffmpeg lib are)
-// which explain the following mess.
-//
-// Be very careful when you make changes to this file.
+// which explain some of the following mess :).
 //
 // Based on the examples 'video-to-goImage.go' of 3d0c/gmf.
 // TODO: fix the memory leak will occur..
@@ -18,9 +16,6 @@ import (
 
 	"github.com/3d0c/gmf"
 )
-
-// #include "libavformat/avformat.h"
-import "C"
 
 type ffmpegVideo struct {
 	swsctx         *gmf.SwsCtx
