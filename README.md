@@ -16,7 +16,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 
 
 ## From the community
-
+- [file_picker](https://github.com/miguelpruivo/flutter_file_picker) - Select single or multiple file paths using the native file explorer. ([pub.dev](https://pub.dev/packages/file_picker))
 - [sqlite](https://github.com/nealwon/go-flutter-plugin-sqlite) - Flutter plugin for SQLite. ([pub.dev](https://pub.dev/packages/sqflite))
 - [title_bar](https://github.com/zephylac/title_bar) - Support custom title bar color [go-flutter#177](https://github.com/go-flutter-desktop/go-flutter/issues/177). **Only for osx**
 - [clipboard_manager](https://github.com/djpnewton/go_flutter_clipboard_manager) - Flutter plugin for copying text to the clipboard. ([pub.dev](https://pub.dev/packages/clipboard_manager))
