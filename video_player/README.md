@@ -27,7 +27,9 @@ This plugin is available for educational purposes, and the go-flutter team isn't
 actively working on it.  
 **`Don't use it in production`** nasty bugs can occur
 (mostly memory leak).  
-The plugin needs a significant rewrite. We are looking for maintainers. Pull Requests are most welcome!
+The plugin needs a significant rewrite. We are looking for maintainers. Pull Requests are most welcome!  
+
+If you get errors with this plugin, before reporting an issue, please check if your system works with the [video-to-goImage](https://github.com/3d0c/gmf/blob/f4b5acb7db5cbbda9a6209be1d0de5f552823f62/examples/video-to-goImage.go) gmf example.
 
 ## Issues
 
