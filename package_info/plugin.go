@@ -22,9 +22,9 @@ func (p *PackageInfoPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
 
 func (p *PackageInfoPlugin) handlePackageInfo(arguments interface{}) (reply interface{}, err error) {
 	return map[interface{}]interface{}{
-		"appName":     flutter.AppName(),
-		"packageName": flutter.OrganizationName() + "." + flutter.AppName(),
-		"version":     flutter.ProjectVersion(),
-		"buildNumber": flutter.ProjectVersion(),
+		"appName":     flutter.ProjectName,
+		"packageName": flutter.OrganizationName + "." + flutter.ProjectName,
+		"version":     flutter.ProjectVersion,
+		"buildNumber": flutter.ProjectVersion,
 	}, nil
 }
