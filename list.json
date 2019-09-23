@@ -1,0 +1,10 @@
+{
+  "standaloneImplementation": [
+    {"name":"image_picker","importFile": "https://raw.githubusercontent.com/go-flutter-desktop/plugins/master/image_picker/import.go.tmpl"},
+    {"name":"path_provider","importFile": "https://raw.githubusercontent.com/go-flutter-desktop/plugins/master/path_provider/import.go.tmpl"},
+    {"name":"shared_preferences","importFile": "https://raw.githubusercontent.com/go-flutter-desktop/plugins/master/shared_preferences/import.go.tmpl"},
+    {"name":"url_launcher","importFile": "https://raw.githubusercontent.com/go-flutter-desktop/plugins/master/url_launcher/import.go.tmpl"},
+    {"name":"video_player","importFile": "https://raw.githubusercontent.com/go-flutter-desktop/plugins/master/video_player/import.go.tmpl"},
+    {"name":"package_info","importFile": "https://raw.githubusercontent.com/go-flutter-desktop/plugins/master/package_info/import.go.tmpl"}
+  ]
+}
