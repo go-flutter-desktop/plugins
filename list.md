@@ -14,6 +14,12 @@ When adding to this list, include links to the original pub.dev, original source
 - Original source: https://github.com/tekartik/sqflite
 - Go-flutter source: https://github.com/nealwon/go-flutter-plugin-sqlite
 
+### open_file
+
+- Original pub.dev: https://pub.dev/packages/open_file
+- Original source: https://github.com/crazecoder/open_file
+- Go-flutter source: https://github.com/jld3103/go-flutter-open_file
+
 ## Standalone plugins
 
 Some plugins may only benefit desktop applications, and do not have an 'original' counterpart. These "standalone" plugins are listed here.
