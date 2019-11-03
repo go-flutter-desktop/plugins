@@ -3,11 +3,9 @@ package shared_preferences
 import (
 	"os"
 	"path/filepath"
-	"runtime"
 
 	flutter "github.com/go-flutter-desktop/go-flutter"
 	"github.com/go-flutter-desktop/go-flutter/plugin"
-	homedir "github.com/mitchellh/go-homedir"
 	"github.com/pkg/errors"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
@@ -45,26 +43,9 @@ func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) e
 		return errors.New("SharedPreferencesPlugin.ApplicationName must be set")
 	}
 
-	switch runtime.GOOS {
-	case "darwin":
-		home, err := homedir.Dir()
-		if err != nil {
-			return errors.Wrap(err, "failed to resolve user home dir")
-		}
-		p.userConfigFolder = filepath.Join(home, "Library", "Application Support")
-	case "windows":
-		p.userConfigFolder = os.Getenv("APPDATA")
-	default:
-		// https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-		if os.Getenv("XDG_CONFIG_HOME") != "" {
-			p.userConfigFolder = os.Getenv("XDG_CONFIG_HOME")
-		} else {
-			home, err := homedir.Dir()
-			if err != nil {
-				return errors.Wrap(err, "failed to resolve user home dir")
-			}
-			p.userConfigFolder = filepath.Join(home, ".config")
-		}
+	p.userConfigFolder, err = os.UserConfigDir()
+	if err != nil {
+		return errors.Wrap(err, "failed to resolve user config dir")
 	}
 
 	// TODO: move into a getDB call which initializes on first use, lower startup latency.
