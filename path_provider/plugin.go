@@ -38,6 +38,7 @@ func (p *PathProviderPlugin) InitPlugin(messenger plugin.BinaryMessenger) error 
 		return errors.New("PathProviderPlugin.ApplicationName must be set")
 	}
 
+	var err error
 	p.userConfigFolder, err = os.UserConfigDir()
 	if err != nil {
 		return errors.Wrap(err, "failed to resolve user config dir")

@@ -43,13 +43,13 @@ func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) e
 		return errors.New("SharedPreferencesPlugin.ApplicationName must be set")
 	}
 
+	var err error
 	p.userConfigFolder, err = os.UserConfigDir()
 	if err != nil {
 		return errors.Wrap(err, "failed to resolve user config dir")
 	}
 
 	// TODO: move into a getDB call which initializes on first use, lower startup latency.
-	var err error
 	p.db, err = leveldb.OpenFile(filepath.Join(p.userConfigFolder, p.VendorName, p.ApplicationName, "shared_preferences.leveldb"), nil)
 	if err != nil {
 		// TODO: when moved into getDB: error shouldn't kill the plugin and thereby the whole app,
