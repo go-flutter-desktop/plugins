@@ -1,6 +1,6 @@
 module github.com/go-flutter-desktop/plugins/image_picker
 
-go 1.12
+go 1.13
 
 require (
 	github.com/go-flutter-desktop/go-flutter v0.30.0
