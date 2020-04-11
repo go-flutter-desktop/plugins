@@ -1,8 +1,9 @@
 package path_provider
 
 import (
-	"github.com/adrg/xdg"
 	"path/filepath"
+
+	"github.com/adrg/xdg"
 
 	"github.com/pkg/errors"
 
