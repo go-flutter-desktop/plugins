@@ -20,6 +20,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 - [file_picker](https://github.com/miguelpruivo/flutter_file_picker) - Select single or multiple file paths using the native file explorer. ([pub.dev](https://pub.dev/packages/file_picker))
 - [sqlite](https://github.com/nealwon/go-flutter-plugin-sqlite) - Flutter plugin for SQLite. ([pub.dev](https://pub.dev/packages/sqflite))
 - [platform_device_id](https://github.com/BestBurning/platform_device_id) - Query device identifier. ([pub.dev](https://pub.dev/packages/platform_device_id))
+- [shutdown_platform](https://github.com/BestBurning/shutdown_platform) - Shutdown the machine. ([pub.dev](https://pub.dev/packages/shutdown_platform))
 - [fast_rsa](https://github.com/jerson/flutter-rsa) - RSA for flutter made with golang for fast performance. ([pub.dev](https://pub.dev/packages/fast_rsa))
 - [desktop_cursor](https://github.com/Luukdegram/desktop_cursor) - A Flutter desktop plugin to set the shape of the cursor. ([pub.dev](https://pub.dev/packages/desktop_cursor))
 - [title_bar](https://github.com/zephylac/title_bar) - Support custom title bar color [go-flutter#177](https://github.com/go-flutter-desktop/go-flutter/issues/177). **Only for osx**
