@@ -19,6 +19,9 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 ## From the community
 - [file_picker](https://github.com/miguelpruivo/flutter_file_picker) - Select single or multiple file paths using the native file explorer. ([pub.dev](https://pub.dev/packages/file_picker))
 - [sqlite](https://github.com/nealwon/go-flutter-plugin-sqlite) - Flutter plugin for SQLite. ([pub.dev](https://pub.dev/packages/sqflite))
+- [platform_device_id](https://github.com/BestBurning/platform_device_id) - Query device identifier. ([pub.dev](https://pub.dev/packages/platform_device_id))
+- [fast_rsa](https://github.com/jerson/flutter-rsa) - RSA for flutter made with golang for fast performance. ([pub.dev](https://pub.dev/packages/fast_rsa))
+- [desktop_cursor](https://github.com/Luukdegram/desktop_cursor) - A Flutter desktop plugin to set the shape of the cursor. ([pub.dev](https://pub.dev/packages/desktop_cursor))
 - [title_bar](https://github.com/zephylac/title_bar) - Support custom title bar color [go-flutter#177](https://github.com/go-flutter-desktop/go-flutter/issues/177). **Only for osx**
 - [clipboard_manager](https://github.com/djpnewton/go_flutter_clipboard_manager) - Flutter plugin for copying text to the clipboard. ([pub.dev](https://pub.dev/packages/clipboard_manager))
 - [open_file](https://github.com/jld3103/go-flutter-open_file) - Flutter plugin for opening a file or URI using the default application on the platform. ([pub.dev](https://pub.dev/packages/open_file))
