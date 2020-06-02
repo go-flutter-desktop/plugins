@@ -2,4 +2,4 @@ module github.com/go-flutter-desktop/plugins/package_info
 
 go 1.13
 
-require github.com/go-flutter-desktop/go-flutter v0.41.0
+require github.com/go-flutter-desktop/go-flutter v0.41.1
