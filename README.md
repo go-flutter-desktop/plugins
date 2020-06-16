@@ -18,7 +18,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 
 ## From the community
 - [file_picker](https://github.com/miguelpruivo/flutter_file_picker) - Select single or multiple file paths using the native file explorer. ([pub.dev](https://pub.dev/packages/file_picker))
-- [sqlite](https://github.com/nealwon/go-flutter-plugin-sqlite) - Flutter plugin for SQLite. ([pub.dev](https://pub.dev/packages/sqflite))
+- [sqlite](https://github.com/boltomli/go-flutter-plugin-sqlite) - Flutter plugin for SQLite. ([pub.dev](https://pub.dev/packages/sqflite))
 - [platform_device_id](https://github.com/BestBurning/platform_device_id) - Query device identifier. ([pub.dev](https://pub.dev/packages/platform_device_id))
 - [shutdown_platform](https://github.com/BestBurning/shutdown_platform) - Shutdown the machine. ([pub.dev](https://pub.dev/packages/shutdown_platform))
 - [fast_rsa](https://github.com/jerson/flutter-rsa) - RSA for flutter made with golang for fast performance. ([pub.dev](https://pub.dev/packages/fast_rsa))
