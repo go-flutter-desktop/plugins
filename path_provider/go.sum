@@ -1,7 +1,7 @@
 github.com/Xuanwo/go-locale v1.0.0 h1:oqC32Kyiu2XZq+fxtwEg0mWiv9WyDhyHu+sT5cDkgME=
 github.com/Xuanwo/go-locale v1.0.0/go.mod h1:kB9tcLfr4Sp+ByIE9SE7vbUkXkGQqel2XH3EHpL0haA=
-github.com/adrg/xdg v0.3.1 h1:uIyL9BYfXaFgDyVRKE8wjtm6ETQULweQqTofphEFJYY=
-github.com/adrg/xdg v0.3.1/go.mod h1:7I2hH/IT30IsupOpKZ5ue7/qNi3CoKzD6tL3HwpaRMQ=
+github.com/adrg/xdg v0.3.2 h1:GUSGQ5pHdev83AYhDSS1A/CX+0JIsxbiWtow2DSA+RU=
+github.com/adrg/xdg v0.3.2/go.mod h1:7I2hH/IT30IsupOpKZ5ue7/qNi3CoKzD6tL3HwpaRMQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
