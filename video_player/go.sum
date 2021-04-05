@@ -1,5 +1,5 @@
-github.com/3d0c/gmf v0.0.0-20200614092945-e58d8d5a6035 h1:QZb1aMKxiYdGGieyIDmXuw9I9YcGWGViTrpQ6vcZX7Q=
-github.com/3d0c/gmf v0.0.0-20200614092945-e58d8d5a6035/go.mod h1:0QMRcUq2JsDECeAq7bj4h79k7XbhtTsrPUQf6G7qfPs=
+github.com/3d0c/gmf v0.0.0-20210405134849-3d8292199ff5 h1:Co0NYhXcktf98ptfRX7GnMSxzJnqzi9v3kPDK9hMJdg=
+github.com/3d0c/gmf v0.0.0-20210405134849-3d8292199ff5/go.mod h1:0QMRcUq2JsDECeAq7bj4h79k7XbhtTsrPUQf6G7qfPs=
 github.com/Xuanwo/go-locale v1.0.0 h1:oqC32Kyiu2XZq+fxtwEg0mWiv9WyDhyHu+sT5cDkgME=
 github.com/Xuanwo/go-locale v1.0.0/go.mod h1:kB9tcLfr4Sp+ByIE9SE7vbUkXkGQqel2XH3EHpL0haA=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
