@@ -1,6 +1,7 @@
 package shared_preferences
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 
@@ -34,6 +35,7 @@ var _ flutter.Plugin = &SharedPreferencesPlugin{} // compile-time type check
 
 // InitPlugin initializes the shared preferences plugin.
 func (p *SharedPreferencesPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
+	fmt.Println("The go-flutter 'shared_preferences' plugin has been deprecated in favor of the official pure Dart implementation. Please see https://github.com/go-flutter-desktop/plugins for more information")
 	if p.VendorName == "" {
 		// returned immediately because this is likely a programming error
 		return errors.New("SharedPreferencesPlugin.VendorName must be set")

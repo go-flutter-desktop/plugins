@@ -1,6 +1,7 @@
 package path_provider
 
 import (
+	"fmt"
 	"path/filepath"
 
 	"github.com/adrg/xdg"
@@ -29,6 +30,7 @@ var _ flutter.Plugin = &PathProviderPlugin{} // compile-time type check
 
 // InitPlugin initializes the path provider plugin.
 func (p *PathProviderPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
+	fmt.Println("The go-flutter 'path_provider' plugin has been deprecated in favor of the official pure Dart implementation. Please see https://github.com/go-flutter-desktop/plugins for more information")
 	if p.VendorName == "" {
 		// returned immediately because this is likely a programming error
 		return errors.New("PathProviderPlugin.VendorName must be set")
