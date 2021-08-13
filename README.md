@@ -27,7 +27,6 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 - [clipboard_manager](https://github.com/djpnewton/go_flutter_clipboard_manager) - Flutter plugin for copying text to the clipboard. ([pub.dev](https://pub.dev/packages/clipboard_manager))
 - [open_file](https://github.com/jld3103/go-flutter-open_file) - Flutter plugin for opening a file or URI using the default application on the platform. ([pub.dev](https://pub.dev/packages/open_file))
 - [firebase_remote_config](https://github.com/jWinterDay/firebase_remote_config) - Flutter plugin for reading firebase remote config ([pub.dev](https://pub.dev/packages/firebase_remote_config))
-- [flutter_systray](https://github.com/JanezStupar/flutter_systray) - Flutter plugin for systray menu support.
 - [warble](https://github.com/jslater89/warble) - Play audio from assets, files, or in-memory buffers. ([pub.dev](https://pub.dev/packages/warble))
 
 If you have implemented a plugin that you would like to add to this repository,
