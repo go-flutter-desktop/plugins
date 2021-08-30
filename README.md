@@ -29,6 +29,7 @@ Please report issues at the [go-flutter issue tracker](https://github.com/go-flu
 - [firebase_remote_config](https://github.com/jWinterDay/firebase_remote_config) - Flutter plugin for reading firebase remote config ([pub.dev](https://pub.dev/packages/firebase_remote_config))
 - [warble](https://github.com/jslater89/warble) - Play audio from assets, files, or in-memory buffers. ([pub.dev](https://pub.dev/packages/warble))
 - [systray](https://github.com/sonr-io/systray) - Support for systray menu for desktop flutter apps
+- [flutter_image_compress](https://github.com/OpenFlutter/flutter_image_compress) - Compresses image with fast native libraries 
 
 If you have implemented a plugin that you would like to add to this repository,
 feel free to open a PR.
