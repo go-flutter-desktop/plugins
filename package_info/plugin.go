@@ -5,7 +5,7 @@ import (
 	"github.com/go-flutter-desktop/go-flutter/plugin"
 )
 
-const channelName = "plugins.flutter.io/package_info"
+var channelNames = []string{"plugins.flutter.io/package_info", "dev.fluttercommunity.plus/package_info"}
 
 // PackageInfoPlugin implements flutter.Plugin and handles method calls to
 // the plugins.flutter.io/package_info channel.
@@ -15,8 +15,10 @@ var _ flutter.Plugin = &PackageInfoPlugin{} // compile-time type check
 
 // InitPlugin initializes the plugin.
 func (p *PackageInfoPlugin) InitPlugin(messenger plugin.BinaryMessenger) error {
-	channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
-	channel.HandleFunc("getAll", p.handlePackageInfo)
+	for _, channelName := range channelNames {
+		channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
+		channel.HandleFunc("getAll", p.handlePackageInfo)
+	}
 	return nil
 }
 
