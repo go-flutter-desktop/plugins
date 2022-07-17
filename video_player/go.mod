@@ -4,5 +4,5 @@ go 1.13
 
 require (
 	github.com/3d0c/gmf v0.0.0-20220425074253-5646e6e80daf
-	github.com/go-flutter-desktop/go-flutter v0.52.0
+	github.com/go-flutter-desktop/go-flutter v0.52.1
 )
