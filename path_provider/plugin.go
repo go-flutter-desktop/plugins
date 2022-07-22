@@ -11,7 +11,10 @@ import (
 	"github.com/go-flutter-desktop/go-flutter/plugin"
 )
 
-const channelName = "plugins.flutter.io/path_provider"
+var channelNames = []string{
+	"plugins.flutter.io/path_provider",
+	"plugins.flutter.io/path_provider_macos",
+}
 
 // PathProviderPlugin implements flutter.Plugin and handles method calls to
 // the plugins.flutter.io/path_provider channel.
@@ -38,15 +41,18 @@ func (p *PathProviderPlugin) InitPlugin(messenger plugin.BinaryMessenger) error 
 		return errors.New("PathProviderPlugin.ApplicationName must be set")
 	}
 
-	channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
-	channel.HandleFunc("getTemporaryDirectory", p.handleTempDir)
-	channel.HandleFunc("getApplicationSupportDirectory", p.handleAppSupportDir)
-	channel.HandleFunc("getLibraryDirectory", p.handleLibraryDir) // MacOS only
-	channel.HandleFunc("getApplicationDocumentsDirectory", p.handleAppDocumentsDir)
-	channel.HandleFunc("getStorageDirectory", p.returnError)           // Android only
-	channel.HandleFunc("getExternalCacheDirectories", p.returnError)   // Android only
-	channel.HandleFunc("getExternalStorageDirectories", p.returnError) // Android only
-	channel.HandleFunc("getDownloadsDirectory", p.handleDownloadsDir)
+	for _, channelName := range channelNames {
+		channel := plugin.NewMethodChannel(messenger, channelName, plugin.StandardMethodCodec{})
+		channel.HandleFunc("getTemporaryDirectory", p.handleTempDir)
+		channel.HandleFunc("getApplicationSupportDirectory", p.handleAppSupportDir)
+		channel.HandleFunc("getLibraryDirectory", p.handleLibraryDir) // MacOS only
+		channel.HandleFunc("getApplicationDocumentsDirectory", p.handleAppDocumentsDir)
+		channel.HandleFunc("getStorageDirectory", p.returnError)           // Android only
+		channel.HandleFunc("getExternalCacheDirectories", p.returnError)   // Android only
+		channel.HandleFunc("getExternalStorageDirectories", p.returnError) // Android only
+		channel.HandleFunc("getDownloadsDirectory", p.handleDownloadsDir)
+	}
+
 	return nil
 }
 
