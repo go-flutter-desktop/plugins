@@ -1,6 +1,6 @@
 module github.com/go-flutter-desktop/plugins/path_provider
 
-go 1.13
+go 1.19
 
 require (
 	github.com/adrg/xdg v0.4.0
