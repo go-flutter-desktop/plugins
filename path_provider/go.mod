@@ -3,7 +3,7 @@ module github.com/go-flutter-desktop/plugins/path_provider
 go 1.19
 
 require (
-	github.com/adrg/xdg v0.5.2
+	github.com/adrg/xdg v0.5.3
 	github.com/go-flutter-desktop/go-flutter v0.52.2
 	github.com/pkg/errors v0.9.1
 )
